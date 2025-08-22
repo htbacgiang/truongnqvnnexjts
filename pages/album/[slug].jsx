@@ -43,7 +43,7 @@ const AlbumDetail = () => {
         {
             slug: "bsa",
             title: "BSA",
-            image: "/blog/blogpost4.jpg",
+            image: "/blog/bsa.jpg",
             description: "Album về BSA",
             seoDescription: "Album ảnh BSA - Hội sinh viên Bắc Giang tại Hà Nội. Những hoạt động, sự kiện và khoảnh khắc đáng nhớ của BSA, Ban Truyền thông và LCH Nguyễn Trãi Hà Đông mà Trường đã ghi lại.",
             keywords: "BSA, hội sinh viên Bắc Giang, sinh viên Bắc Giang Hà Nội, hoạt động sinh viên, cộng đồng Bắc Giang"
@@ -234,9 +234,9 @@ export async function getStaticProps({ params }) {
         {
             slug: "bsa",
             title: "BSA",
-            image: "/blog/blogpost4.jpg",
+            image: "/blog/bsa.jpg",
             description: "Album về BSA",
-            seoDescription: "Album ảnh BSA - Hội sinh viên Bắc Giang tại Hà Nội. Những hoạt động, sự kiện và khoảnh khắc đáng nhớ của cộng đồng sinh viên Bắc Giang học tập và sinh sống tại thủ đô.",
+            seoDescription: "Album ảnh BSA - Hội sinh viên Bắc Giang tại Hà Nội. Những hoạt động, sự kiện và khoảnh khắc đáng nhớ của BSA, Ban Truyền thông và LCH Nguyễn Trãi Hà Đông mà Trường đã ghi lại.",
             keywords: "BSA, hội sinh viên Bắc Giang, sinh viên Bắc Giang Hà Nội, hoạt động sinh viên, cộng đồng Bắc Giang"
         },
         {
