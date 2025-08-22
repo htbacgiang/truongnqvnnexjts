@@ -37,7 +37,7 @@ const AlbumDetail = () => {
             title: "Trường và Friends",
             image: "/blog/blogpost3.jpg",
             description: "Những khoảnh khắc vui vẻ cùng bạn bè",
-            seoDescription: "Album ảnh Trường và Friends - Lưu giữ những khoảnh khắc đáng nhớ cùng bạn bè, đồng nghiệp. Những buổi gặp gỡ, tiệc tùng và hoạt động tập thể thú vị.",
+            seoDescription: "Album ảnh Trường và Friends - Lưu giữ những khoảnh khắc đáng nhớ cùng bạn bè của Trường NQ.",
             keywords: "bạn bè, đồng nghiệp, tiệc tùng, hoạt động tập thể, kỷ niệm, gặp gỡ bạn bè"
         },
         {
@@ -45,7 +45,7 @@ const AlbumDetail = () => {
             title: "BSA",
             image: "/blog/blogpost4.jpg",
             description: "Album về BSA",
-            seoDescription: "Album ảnh BSA - Hội sinh viên Bắc Giang tại Hà Nội. Những hoạt động, sự kiện và khoảnh khắc đáng nhớ của cộng đồng sinh viên Bắc Giang học tập và sinh sống tại thủ đô.",
+            seoDescription: "Album ảnh BSA - Hội sinh viên Bắc Giang tại Hà Nội. Những hoạt động, sự kiện và khoảnh khắc đáng nhớ của BSA, Ban Truyền thông và LCH Nguyễn Trãi Hà Đông mà Trường đã ghi lại.",
             keywords: "BSA, hội sinh viên Bắc Giang, sinh viên Bắc Giang Hà Nội, hoạt động sinh viên, cộng đồng Bắc Giang"
         },
         {
@@ -53,7 +53,7 @@ const AlbumDetail = () => {
             title: "Xe bus Hà Nội",
             image: "/blog/blogpost5.jpg",
             description: "Những hình ảnh về xe bus Hà Nội",
-            seoDescription: "Album ảnh xe bus Hà Nội - Bộ sưu tập hình ảnh về hệ thống xe bus công cộng của thủ đô. Những khoảnh khắc thú vị trên xe bus, cảnh đẹp Hà Nội qua cửa sổ xe và cuộc sống đô thị.",
+            seoDescription: "Album ảnh xe bus Hà Nội - Bộ sưu tập hình ảnh về hệ thống xe bus công cộng của Hà Nội. Những khoảnh khắc thú vị trên xe bus, cảnh đẹp Hà Nội qua cửa sổ xe và cuộc sống đô thị.",
             keywords: "xe bus Hà Nội, giao thông Hà Nội, xe bus công cộng, cuộc sống Hà Nội, giao thông đô thị"
         },
         {
