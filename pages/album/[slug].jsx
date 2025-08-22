@@ -176,7 +176,7 @@ const AlbumDetail = () => {
                     </div>
 
                     {/* Album Content */}
-                    <div className="bg-white rounded-xl shadow-lg p-6">
+                    <div className="bg-white rounded-xl shadow-lg p-3">
                         {renderAlbumComponent()}
                     </div>
                 </div>

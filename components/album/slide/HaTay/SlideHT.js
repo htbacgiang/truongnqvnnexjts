@@ -38,7 +38,7 @@ const AlbumGallery = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto">
       <div className="flex justify-center">
         <Gallery
           photos={photos}
