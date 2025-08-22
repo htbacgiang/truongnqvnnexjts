@@ -92,6 +92,11 @@ export const photos = [
     width: 6,
     height: 4
   },
+  {
+    src: "https://live.staticflickr.com/65535/52790651490_5011b985a8_b.jpg",
+    width: 6,
+    height: 4
+  },
   // Nam Dang
   {
     src: "https://live.staticflickr.com/65535/52654945752_715c888484_b.jpg",

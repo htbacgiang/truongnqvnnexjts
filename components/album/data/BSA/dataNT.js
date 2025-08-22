@@ -9,18 +9,7 @@ export const photos = [
     width: 6,
     height: 4
   },
-  // Sinh nhật NT 14 năm
-  {
-    src: "https://live.staticflickr.com/65535/54737055575_4aa1d9d7c1_b.jpg",
-    width: 6,
-    height: 4
-  },
-  // Sinh nhật NT 13 năm
-  {
-    src: "https://live.staticflickr.com/65535/54736908113_7af2918e66_b.jpg",
-    width: 6,
-    height: 4
-  },
+ 
   {
     src: "https://live.staticflickr.com/65535/52143617184_3b078ed471_b.jpg",
     width: 6,

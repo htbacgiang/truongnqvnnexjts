@@ -233,9 +233,9 @@ export async function getStaticProps({ params }) {
         },
         {
             slug: "bsa",
-            title: "BSA",
+            title: "BSA - Hội sinh viên Bắc Giang tại Hà Nội",
             image: "/blog/bsa.jpg",
-            description: "Album về BSA",
+            description: "Album về BSA - Hội sinh viên Bắc Giang tại Hà Nội",
             seoDescription: "Album ảnh BSA - Hội sinh viên Bắc Giang tại Hà Nội. Những hoạt động, sự kiện và khoảnh khắc đáng nhớ của BSA, Ban Truyền thông và LCH Nguyễn Trãi Hà Đông mà Trường đã ghi lại.",
             keywords: "BSA, hội sinh viên Bắc Giang, sinh viên Bắc Giang Hà Nội, hoạt động sinh viên, cộng đồng Bắc Giang"
         },
@@ -266,13 +266,13 @@ export async function getStaticProps({ params }) {
     }
 
     const meta = {
-        title: `${album.title} - Album Ảnh - Trường NQ Web`,
+        title: `${album.title} - Album Ảnh`,
         description: album.seoDescription || album.description,
         keywords: album.keywords || `album ảnh, ${album.title}, Trường NQ Web, kỷ niệm`,
         robots: "index, follow",
         canonical: `https://truongnq.vn/album/${params.slug}`,
         og: {
-            title: `${album.title} - Album Ảnh - Trường NQ Web`,
+            title: `${album.title} - Album Ảnh`,
             description: album.seoDescription || album.description,
             type: "website",
             url: `https://truongnq.vn/album/${params.slug}`,
@@ -283,7 +283,7 @@ export async function getStaticProps({ params }) {
         },
         twitter: {
             card: "summary_large_image",
-            title: `${album.title} - Album Ảnh - Trường NQ Web`,
+            title: `${album.title} - Album Ảnh`,
             description: album.seoDescription || album.description,
             image: `https://truongnq.vn${album.image}`,
         },

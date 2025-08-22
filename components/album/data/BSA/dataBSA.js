@@ -11,6 +11,12 @@ export const photos = [
     width: 6,
     height: 4
   },
+  {
+    src: "https://live.staticflickr.com/65535/54737373790_40b15f726a_b.jpg",
+    width: 6,
+    height: 4
+  },
+ 
   // Sinh nhật 10 năm
   {
     src: "https://live.staticflickr.com/65535/54736899063_4b08150ba6_b.jpg",
