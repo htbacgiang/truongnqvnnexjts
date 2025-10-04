@@ -1,0 +1,506 @@
+/* Main Container */
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #0a0a23 0%, #000000 100%);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Loading Screen */
+.loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0a0a23 0%, #1a1a3a 50%, #000000 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeOut 1s ease-in-out 1.5s forwards;
+}
+
+.loadingContent {
+  text-align: center;
+  color: white;
+}
+
+.loadingContent h2 {
+  font-size: 2rem;
+  margin: 20px 0 10px 0;
+  background: linear-gradient(45deg, #ffeb3b, #ff9800, #ff5722);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.loadingContent p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin: 0;
+}
+
+.loadingSpinner {
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid #ffeb3b;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Instructions Overlay */
+.instructionsOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 900;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.instructions {
+  background: rgba(10, 10, 35, 0.95);
+  border: 2px solid rgba(255, 235, 59, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  color: white;
+  position: relative;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 50px rgba(255, 235, 59, 0.2);
+}
+
+.instructions h3 {
+  font-size: 1.5rem;
+  margin: 0 0 20px 0;
+  color: #ffeb3b;
+}
+
+.controlsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.1rem;
+}
+
+.controlsList div {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.closeInstructions {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.closeInstructions:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Space Background */
+.spaceBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.stars,
+.stars2,
+.stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.stars {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 90px 40px, #fff, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: sparkle 20s linear infinite;
+}
+
+.stars2 {
+  background-image: 
+    radial-gradient(1px 1px at 40px 60px, #fff, transparent),
+    radial-gradient(1px 1px at 120px 25px, rgba(255,255,255,0.7), transparent);
+  background-repeat: repeat;
+  background-size: 300px 150px;
+  animation: sparkle 25s linear infinite reverse;
+}
+
+.stars3 {
+  background-image: 
+    radial-gradient(1px 1px at 60px 20px, rgba(255,255,255,0.5), transparent),
+    radial-gradient(2px 2px at 180px 60px, #fff, transparent);
+  background-repeat: repeat;
+  background-size: 400px 200px;
+  animation: sparkle 30s linear infinite;
+}
+
+@keyframes sparkle {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-100px); }
+}
+
+/* Galaxy Container */
+.galaxyContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+  z-index: 10;
+}
+
+/* Particle System */
+.particleSystem {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  transform: translate3d(var(--particle-x), var(--particle-y), var(--particle-z));
+  animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+  0% {
+    opacity: 0;
+    transform: translate3d(var(--particle-x), var(--particle-y), var(--particle-z)) scale(0);
+  }
+  10% {
+    opacity: 1;
+    transform: translate3d(var(--particle-x), var(--particle-y), var(--particle-z)) scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: translate3d(var(--particle-x), calc(var(--particle-y) - 200px), var(--particle-z)) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--particle-x), calc(var(--particle-y) - 300px), var(--particle-z)) scale(0);
+  }
+}
+
+/* Central Sun */
+.centralSun {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+
+.sunCore {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffeb3b 0%, #ff9800 50%, #ff5722 100%);
+  box-shadow: 
+    0 0 50px #ffeb3b,
+    0 0 100px #ff9800,
+    0 0 150px #ff5722;
+  animation: sunPulse 4s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sunGlow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 235, 59, 0.3) 0%, transparent 70%);
+  animation: glowPulse 3s ease-in-out infinite alternate;
+}
+
+.centerText {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 235, 59, 0.6);
+  z-index: 5;
+  white-space: nowrap;
+}
+
+.sunRays {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(255, 235, 59, 0.3) 10deg,
+    transparent 20deg,
+    rgba(255, 152, 0, 0.3) 30deg,
+    transparent 40deg
+  );
+  border-radius: 50%;
+  animation: rotateSunRays 20s linear infinite;
+}
+
+@keyframes sunPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes glowPulse {
+  0% { opacity: 0.5; transform: scale(1); }
+  100% { opacity: 0.8; transform: scale(1.2); }
+}
+
+@keyframes rotateSunRays {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Text System */
+.textSystem {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.textOrbit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  animation: rotateOrbit linear infinite;
+  animation-duration: var(--rotation-speed);
+  animation-direction: normal;
+}
+
+@keyframes rotateOrbit {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.textChar {
+  position: absolute;
+  transform: translate3d(var(--char-x), 0, var(--char-z));
+  transform-style: preserve-3d;
+}
+
+.char3d {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(64, 196, 255, 0.6),
+    0 0 30px rgba(100, 149, 237, 0.4);
+  transform: rotateY(var(--char-angle));
+  animation: charFloat 4s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.char3d:hover {
+  transform: rotateY(var(--char-angle)) scale(1.3);
+  text-shadow: 
+    0 0 15px rgba(255, 255, 255, 1),
+    0 0 25px rgba(64, 196, 255, 0.8),
+    0 0 35px rgba(100, 149, 237, 0.6);
+}
+
+@keyframes charFloat {
+  0%, 100% { transform: rotateY(var(--char-angle)) translateZ(0px); }
+  50% { transform: rotateY(var(--char-angle)) translateZ(30px); }
+}
+
+/* Orbital Rings */
+.orbitalRings {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.orbitalRing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--ring-size);
+  height: var(--ring-size);
+  border: 1px solid rgba(255, 255, 255, var(--ring-opacity));
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotateX(75deg);
+  animation: ringPulse 8s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+  0%, 100% { opacity: var(--ring-opacity); }
+  50% { opacity: calc(var(--ring-opacity) * 2); }
+}
+
+/* Status Info */
+.statusInfo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.statusInfo div {
+  margin-bottom: 5px;
+}
+
+.statusInfo div:last-child {
+  margin-bottom: 0;
+}
+
+.autoRotateIndicator {
+  color: #ffeb3b !important;
+  font-weight: bold;
+}
+
+/* Reset Button */
+.resetButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #ffeb3b, #ff9800);
+  color: #000;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 235, 59, 0.3);
+}
+
+.resetButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 235, 59, 0.4);
+}
+
+.resetButton:active {
+  transform: translateY(0);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .instructions {
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  .instructions h3 {
+    font-size: 1.2rem;
+  }
+  
+  .controlsList {
+    font-size: 1rem;
+  }
+  
+  .statusInfo {
+    font-size: 12px;
+    padding: 10px;
+  }
+  
+  .resetButton {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  
+  .centerText {
+    font-size: 14px;
+  }
+  
+  .char3d {
+    font-size: 16px;
+  }
+}
+
+/* Hardware acceleration */
+.galaxyContainer,
+.textOrbit,
+.textChar,
+.particle {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}

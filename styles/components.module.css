@@ -1,0 +1,292 @@
+/* CoreValues Component Styles */
+.coreValuesSection {
+  position: relative;
+  color: #ffffff;
+  padding: 3rem 1.5rem;
+  margin-bottom: 1.25rem;
+  background-image: url('/images/loi-ich-cua-website.jpg');
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+  border-bottom-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.coreValuesOverlay {
+  position: absolute;
+  inset: 0;
+  background: #1d4ed8;
+  opacity: 0.95;
+  border-top-left-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+  border-bottom-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.coreValuesContainer {
+  position: relative;
+  max-width: 80rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.coreValuesTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.coreValuesDescription {
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.coreValuesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.coreValueItem {
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  transform: transition duration-300;
+  transition: all 0.3s ease;
+}
+
+.coreValueItem:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.coreValueNumber {
+  flex-shrink: 0;
+  background: #f97316;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.coreValueContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 0.5rem;
+  text-align: left;
+  color: #ffffff;
+  font-size: 0.875rem;
+  padding: 0.5rem;
+}
+
+.coreValueTitle {
+  font-weight: 700;
+  margin-right: 0.5rem;
+  color: #ffffff;
+}
+
+.coreValueDetails {
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Responsive Design for CoreValues */
+@media (min-width: 768px) {
+  .coreValueContent {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* NQWebHero Component Styles */
+.nqWebHeroSection {
+  padding: 3rem 0;
+  background: #ffffff;
+}
+
+.nqWebHeroTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.nqWebHeroContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nqWebHeroContent {
+  width: 100%;
+  max-width: 50%;
+  padding-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.nqWebHeroList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.nqWebHeroItem {
+  display: flex;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+
+.nqWebHeroItem:hover {
+  transform: translateX(4px);
+}
+
+.nqWebHeroIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #6366f1;
+  margin-right: 0.5rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.nqWebHeroItemContent {
+  flex: 1;
+}
+
+.nqWebHeroItemTitle {
+  display: block;
+  color: #1f2937;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.nqWebHeroItemDescription {
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: 0.875rem;
+}
+
+.nqWebHeroImage {
+  width: 100%;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.nqWebHeroImage img {
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.nqWebHeroImage:hover img {
+  transform: scale(1.02);
+}
+
+/* Responsive Design for NQWebHero */
+@media (min-width: 768px) {
+  .nqWebHeroContainer {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .nqWebHeroContent {
+    margin-bottom: 0;
+  }
+  
+  .nqWebHeroImage {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .nqWebHeroContent {
+    max-width: 100%;
+    padding-right: 0;
+  }
+  
+  .nqWebHeroImage {
+    max-width: 100%;
+  }
+  
+  .nqWebHeroTitle {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animation Classes */
+.fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.slideInLeft {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.slideInRight {
+  animation: slideInRight 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hover Effects */
+.coreValueItem:hover .coreValueNumber {
+  background: #ea580c;
+  transform: scale(1.1);
+}
+
+.nqWebHeroItem:hover .nqWebHeroIcon {
+  color: #4f46e5;
+  transform: scale(1.1);
+}

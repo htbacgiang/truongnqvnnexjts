@@ -1,0 +1,466 @@
+/* Introduction Page Styles */
+.introductionContainer {
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+/* Vision & Mission Section */
+.visionMissionSection {
+  padding: 3rem 1.5rem;
+  background: #f8fafc;
+}
+
+.visionMissionContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.visionMissionText {
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.visionMissionTitle {
+  color: #059669;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.visionMissionText p {
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.visionMissionText strong {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+/* Video Section */
+.videoSection {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border: 2px solid #10b981;
+}
+
+.videoImage {
+  width: 100%;
+  height: auto;
+  border-radius: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.videoImage:hover {
+  transform: scale(1.02);
+}
+
+.playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.playButton:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.playButton svg {
+  color: #dc2626;
+  transition: transform 0.3s ease;
+}
+
+.playButton:hover svg {
+  transform: scale(1.1);
+}
+
+/* Video Modal */
+.videoModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.videoModalContent {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16/9;
+}
+
+.videoModalContent iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  border: none;
+}
+
+.closeButton {
+  position: absolute;
+  top: -2rem;
+  right: 0;
+  background: #374151;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.closeButton:hover {
+  background: #6b7280;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .visionMissionContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .visionMissionTitle {
+    font-size: 1.25rem;
+  }
+  
+  .playButton {
+    padding: 0.75rem 1rem;
+  }
+  
+  .playButton svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+/* Education & Experience Section */
+.educationExperienceSection {
+  padding: 4rem 1.5rem;
+  background: #ffffff;
+}
+
+.educationExperienceContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.educationExperienceHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.educationExperienceTitle {
+  color: #ec4899;
+  font-size: 1.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.educationExperienceSubtitle {
+  color: #111827;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.educationExperienceDescription {
+  color: #6b7280;
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.educationSectionTitle {
+  color: #111827;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.educationSectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 3rem;
+  height: 2px;
+  background: #d1d5db;
+}
+
+.educationExperienceGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.educationCard {
+  background: #f9fafb;
+  border: 1px solid #ec4899;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.educationCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #ec4899;
+}
+
+.educationCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(236, 72, 153, 0.15);
+}
+
+.educationCardTitle {
+  color: #111827;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.educationCardSubtitle {
+  color: #6b7280;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.educationCardDate {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.educationCardDescription {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.educationCardList {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-top: 1rem;
+}
+
+.educationCardList li {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.educationCardLink {
+  color: #ec4899;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.educationCardLink:hover {
+  color: #be185d;
+  text-decoration: underline;
+}
+
+/* Experience Section */
+.experienceSection {
+  padding: 3rem 1.5rem;
+  background: #ffffff;
+}
+
+.experienceContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.experienceContent {
+  padding-right: 2rem;
+}
+
+.experienceTitle {
+  color: #111827;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.experienceTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 3rem;
+  height: 2px;
+  background: #d1d5db;
+}
+
+.experienceItem {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 1rem;
+  border-left: 4px solid #ec4899;
+  transition: all 0.3s ease;
+}
+
+.experienceItem:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.experienceItemTitle {
+  color: #111827;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.experienceItemTitle span {
+  color: #ec4899;
+  font-weight: 500;
+}
+
+.experienceItemRole {
+  color: #374151;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.experienceItemDescription {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.experienceItemLink {
+  color: #ec4899;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.experienceItemLink:hover {
+  color: #be185d;
+  text-decoration: underline;
+}
+
+.experienceImage {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.experienceImage img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.experienceImage:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive Design for Experience */
+@media (max-width: 768px) {
+  .experienceContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .experienceContent {
+    padding-right: 0;
+  }
+  
+  .educationExperienceGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .educationExperienceTitle {
+    font-size: 1.5rem;
+  }
+  
+  .educationExperienceSubtitle {
+    font-size: 1.25rem;
+  }
+}
+
+/* Animation Classes */
+.fadeIn {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.slideInUp {
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
