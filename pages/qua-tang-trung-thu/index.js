@@ -248,7 +248,7 @@ export default function Home() {
       for (let i = 0; i < N_TEXT; i++) {
         const text = new Text();
         text.text = PHRASES[i % PHRASES.length];
-        const fontSize = (window.innerWidth < 600 ? 0.6 : 0.8) + Math.random() * 1.0;
+        const fontSize = (window.innerWidth < 600 ? 0.3 : 0.5) + Math.random() * (window.innerWidth < 600 ? 0.5 : 0.7);
         text.fontSize = fontSize;
         const color = randomColor();
         const x = (Math.random() - 0.5) * spreadX;
@@ -600,8 +600,8 @@ export default function Home() {
             
             {/* Lời chúc */}
             {selectedMessage && (
-              <div className="mt-6 bg-gradient-to-r from-pink-500 via-red-500 to-purple-600 px-6 rounded-2xl shadow-2xl max-w-2xl w-full">
-                <p className="text-white text-xl md:text-xl font-medium text-center leading-relaxed">
+              <div className="mt-4 bg-gradient-to-r from-pink-500 via-red-500 to-purple-600 px-4 py-3 md:px-6 md:py-4 rounded-2xl shadow-2xl max-w-2xl w-full">
+                <p className="text-white text-base md:text-xl font-medium text-center leading-relaxed">
                   {selectedMessage}
                 </p>
       
