@@ -7,6 +7,8 @@ const dancingScript = Dancing_Script({
   subsets: ["latin", "vietnamese"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
+  fallback: ["Arial", "Helvetica", "sans-serif"],
+  adjustFontFallback: true,
 });
 
 export default function ThuChoTam() {

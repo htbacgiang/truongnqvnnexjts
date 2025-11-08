@@ -1,4 +1,10 @@
 @font-face {
+  font-family: 'MJ-Betrayos';
+  src: url('/font/MJ-Betrayos.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
   font-family: '00057 UTM Centur';
   src: url('/fonts/00057-UTM-Centur.ttf') format('truetype');
   font-display: swap;
