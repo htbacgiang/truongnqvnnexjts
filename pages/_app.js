@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 import "../styles/to-tinh.css";
-import { Rajdhani } from "next/font/google";
 import { Provider } from "react-redux";
 import store from "../store";
 import { SessionProvider } from "next-auth/react";
@@ -10,13 +9,6 @@ import { Toaster } from "react-hot-toast";
 import Head from "next/head";
 import '../styles/fonts.css';
 let persistor = persistStore(store);
-
-const rajdhani = Rajdhani({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-  variable: "--ltn__heading-font",
-});
 
 function MyApp({ Component, pageProps: { session, meta, ...pageProps } }) {
   return (
@@ -54,7 +46,7 @@ function MyApp({ Component, pageProps: { session, meta, ...pageProps } }) {
       <SessionProvider session={session}>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
-            <div className={rajdhani.variable}>
+            <div style={{ fontFamily: '"Arial", "Helvetica", "Segoe UI", sans-serif' }}>
               <Toaster />
               <Component {...pageProps} />
             </div>

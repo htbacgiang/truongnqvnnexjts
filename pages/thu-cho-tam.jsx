@@ -219,7 +219,7 @@ export default function ThuChoTam() {
                   <span className="text-sm md:text-base font-semibold">
                     {isPlaying 
                       ? 'Đang phát...' 
-                      : 'Nếu Tám lười đọc thì có thể nghe bản thu âm của Trường nhé'}
+                      : 'Nếu Tám lười đọc thì có thể nghe bản Podcast của Trường nhé'}
                   </span>
                 </motion.button>
               </motion.div>
