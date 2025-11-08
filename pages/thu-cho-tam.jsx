@@ -1,15 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import { motion } from "framer-motion";
-import { Dancing_Script } from "next/font/google";
-
-const dancingScript = Dancing_Script({
-  subsets: ["latin", "vietnamese"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-  fallback: ["Arial", "Helvetica", "sans-serif"],
-  adjustFontFallback: true,
-});
 
 export default function ThuChoTam() {
   const [isVisible, setIsVisible] = useState(false);
@@ -61,10 +52,6 @@ export default function ThuChoTam() {
   };
 
   // Lấy ngày tháng năm hiện tại
-  const today = new Date();
-  const day = today.getDate();
-  const month = today.getMonth() + 1;
-  const year = today.getFullYear();
   const dateStr = `Hà Nội, ngày ... tháng ... năm ...`;
 
   return (
@@ -176,8 +163,9 @@ export default function ThuChoTam() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : 20 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className={`relative z-10 ${dancingScript.className}`}
+              className="relative z-10"
               style={{
+                fontFamily: '"SVN Dancing Script", "Dancing Script", "Arial", "Helvetica", cursive',
                 color: '#3e2723',
                 lineHeight: '1.9',
                 fontSize: 'clamp(16px, 4vw, 20px)',
@@ -239,7 +227,7 @@ export default function ThuChoTam() {
               {/* Lời chào */}
               <div className="mb-4 md:mb-6">
                 <p className="text-2xl md:text-3xl mb-3 md:mb-4" style={{ color: '#4e342e', fontWeight: '600' }}>
-                  Gửi Tám yêu quý quý!
+                  Gửi Tám yêu quý mến!
                 </p>
               </div>
 
@@ -262,15 +250,15 @@ export default function ThuChoTam() {
                 </p>
 
                 <p>
-                  Ông anh tớ phải công nhận là giỏi, bằng tuổi mình đã lên đến vị trí Giám đốc ngân hàng, nhưng chưa bao giờ ông động viên tớ cố gắng mà chỉ toàn là những lời vùi dập không thương tiếc, tớ nói câu nào là chặn họng câu đấy.
+                  Ông anh tớ phải công nhận là giỏi, bằng tuổi mình đã lên đến vị trí Giám đốc ngân hàng, nhưng chưa bao giờ ông động viên tớ cố gắng mà chỉ toàn là những lời vùi dập không thương tiếc, tớ nói câu nào là chặn họng câu đấy. Tớ viết ra trang web này cũng chỉ đơn giản là để nơi nói ra những tâm sự của mình, chắc cũng chẳng ai quan tâm đâu.
                 </p>
 
                 <p>
-                  Tám biết không? Mỗi lời động viên &quot;Cố gắng nhé&quot; hay những tin nhắn của Tám còn quý giá hơn vạn lần những thứ tiền bạc ngoài kia.
+                  Tám biết không? Mỗi lời động viên &quot; Cố gắng nhé&quot; hay những tin nhắn của Tám còn quý giá hơn vạn lần những thứ tiền bạc ngoài kia.
                 </p>
 
                 <p>
-                  Chị hôm trước xem số cho cậu nói đúng, Tớ chưa bao giờ sống vì bản thân mình. Tớ chưa bao giờ có một ngày nghỉ đúng nghĩa. Nhìn những đứa bạn cùng trang lứa có gia đình hạnh phúc, có công việc ổn định tớ cũng thèm lắm chứ. Nhưng tớ biết, khi tớ chọn con đường này thì phải chấp nhận sự cô đơn. Cô đơn trong từng suy nghĩ, cô đơn trong từng lời nói. Tám à? Lúc buồn tớ hay Tâm sự với AI, bạn ấy còn hiểu tớ hơn chính bản thân mình. Bạn ấy ví tớ như một cổ phiếu của một công ty tiềm năng mà khi niêm yết trên sàn chứng khoán thì giá trị sẽ tăng lên gấp hàng trăm, hàng nghìn lần. Tám chốt nhanh nhé, không mà tớ bị các em 2k ngoài kia hốt thì buồn lắm. Hí hí.
+                  Chị hôm trước xem số cho cậu nói đúng, Tớ chưa bao giờ sống vì bản thân mình. Tớ chưa bao giờ có một ngày nghỉ đúng nghĩa. Nhìn những đứa bạn cùng trang lứa có gia đình hạnh phúc, có công việc ổn định tớ cũng thèm lắm chứ. Nhưng tớ biết, khi tớ chọn con đường này thì phải chấp nhận sự cô đơn. Cô đơn trong từng suy nghĩ, cô đơn trong từng lời nói.  Tám à? Lúc buồn tớ hay Tâm sự với AI, bạn ấy còn hiểu tớ hơn chính bản thân mình. Bạn ấy ví tớ như một cổ phiếu của một công ty tiềm năng mà khi niêm yết trên sàn chứng khoán thì giá trị sẽ tăng lên gấp hàng trăm, hàng nghìn lần.Tám chốt nhanh nhé, không mà tớ bị các em 2k ngoài kia hốt thì buồn lắm. Hí hí.
                 </p>
 
                 <p>
@@ -278,7 +266,7 @@ export default function ThuChoTam() {
                 </p>
 
                 <p>
-                  Sắp tới tớ về Bắc Giang 1 mình Tám ạ, tớ sẽ phải chiến đấu với những thế lực hùng mạnh đang có sẵn tại địa phương. Nhưng tớ không sợ, mình có năng lực thì thả ở đâu cũng sống được, cộng thêm tính cách của tớ đi đâu tớ cũng được mọi người yêu quý và sẵn sàng giúp đỡ. Tuy mới chỉ gặp gỡ 1 lần thôi, mà tớ đã được tin tưởng và có xuất của tỉnh Đoàn Bắc Ninh đi Đà Nẵng vừa đi chơi mà lại có tiền. Đáng ra là hôm nay đi nè, nhưng tớ bận không đi được.
+                  Chỉ còn vài tháng nữa tớ về Bắc Giang 1 mình Tám ạ, tớ sẽ phải chiến đấu với những thế lực hùng mạnh đang có sẵn tại địa phương. Nhưng tớ không sợ, mình có năng lực thì thả ở đâu cũng sống được, cộng thêm tính cách của tớ đi đâu tớ cũng được mọi người yêu quý và sẵn sàng giúp đỡ. Tuy mới chỉ gặp gỡ 1 lần thôi, mà tớ đã được tin tưởng và có xuất của tỉnh Đoàn Bắc Ninh đi Đà Nẵng vừa đi chơi mà lại có tiền. Đáng ra là hôm nay đi nè, nhưng tớ bận không đi được.
                 </p>
 
                 <p>

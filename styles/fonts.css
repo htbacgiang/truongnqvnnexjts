@@ -5,6 +5,34 @@
 }
 
 @font-face {
+  font-family: 'SVN Dancing Script';
+  src: url('/font/SVN-Dancing-script.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'SVN Dancing Script';
+  src: url('/font/SVN-Dancing-script.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'SVN Dancing Script';
+  src: url('/font/SVN-Dancing-script.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'SVN Dancing Script';
+  src: url('/font/SVN-Dancing-script.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 700;
+}
+
+@font-face {
   font-family: '00057 UTM Centur';
   src: url('/fonts/00057-UTM-Centur.ttf') format('truetype');
   font-display: swap;
