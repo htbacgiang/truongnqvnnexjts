@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import { motion } from "framer-motion";
 
-export default function ThuChoTam() {
+export default function ThuChoTam({ meta }) {
   const [isVisible, setIsVisible] = useState(false);
   const [showContent, setShowContent] = useState(false);
   const [windowSize, setWindowSize] = useState({ width: 1200, height: 800 });
@@ -52,21 +52,43 @@ export default function ThuChoTam() {
   };
 
   // Lấy ngày tháng năm hiện tại
-  const dateStr = `Hà Nội, ngày ... tháng ... năm ...`;
+  const dateStr = `Hà Nội, ngày... tháng... năm...`;
 
   return (
     <>
       <Head>
-        <title>Thư gửi Tám - Trường NQ</title>
-        <meta name="description" content="Lá thư chân thành gửi đến Tám" />
+        <title>{meta?.title || "Thư gửi Tám - Trường NQ"}</title>
+        <meta name="description" content={meta?.description || "Lá thư chân thành gửi đến Tám"} />
+        <meta name="keywords" content={meta?.keywords || ""} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots" content={meta?.robots || "noindex, nofollow"} />
+        <meta name="author" content={meta?.author || "Trường NQ"} />
+        {meta?.canonical && <link rel="canonical" href={meta.canonical} />}
+        {meta?.og && (
+          <>
+            <meta property="og:title" content={meta.og.title} />
+            <meta property="og:description" content={meta.og.description} />
+            <meta property="og:type" content={meta.og.type} />
+            <meta property="og:image" content={meta.og.image} />
+            <meta property="og:image:width" content={meta.og.imageWidth} />
+            <meta property="og:image:height" content={meta.og.imageHeight} />
+            <meta property="og:url" content={meta.og.url} />
+          </>
+        )}
+        {meta?.twitter && (
+          <>
+            <meta name="twitter:card" content={meta.twitter.card} />
+            <meta name="twitter:title" content={meta.twitter.title} />
+            <meta name="twitter:description" content={meta.twitter.description} />
+            <meta name="twitter:image" content={meta.twitter.image} />
+          </>
+        )}
       </Head>
 
       {/* Audio element - Ẩn, chỉ dùng để phát audio */}
       <audio 
         ref={audioRef}
-        src="/thu-cho-tam.mp3"
+        src="/tam.mp3"
         preload="metadata"
         style={{ display: 'none' }}
       />
@@ -168,7 +190,7 @@ export default function ThuChoTam() {
                 fontFamily: '"SVN Dancing Script", "Dancing Script", "Arial", "Helvetica", cursive',
                 color: '#3e2723',
                 lineHeight: '1.9',
-                fontSize: 'clamp(16px, 4vw, 20px)',
+                fontSize: 'clamp(18px, 4vw, 22px)',
                 fontWeight: '400',
                 position: 'relative',
               }}
@@ -178,7 +200,7 @@ export default function ThuChoTam() {
                 className="text-left mb-6 md:mb-8"
                 style={{ 
                   color: '#5d4037',
-                  fontSize: '16px',
+                  fontSize: 'clamp(17px, 4vw, 18px)',
                   fontStyle: 'italic',
                   fontWeight: '500'
                 }}
@@ -226,27 +248,27 @@ export default function ThuChoTam() {
 
               {/* Lời chào */}
               <div className="mb-4 md:mb-6">
-                <p className="text-2xl md:text-3xl mb-3 md:mb-4" style={{ color: '#4e342e', fontWeight: '600' }}>
-                  Gửi Tám yêu quý mến!
+                <p className="text-3xl md:text-4xl mb-3 md:mb-4" style={{ color: '#4e342e', fontWeight: '600' }}>
+                  Gửi Tám yêu quý!
                 </p>
               </div>
 
               {/* Nội dung chính */}
-              <div className="space-y-3 md:space-y-4 mb-4 md:mb-6" style={{ lineHeight: '1.9', fontSize: 'clamp(16px, 4vw, 20px)' }}>
+              <div className="space-y-3 md:space-y-4 mb-4 md:mb-6" style={{ lineHeight: '1.9', fontSize: 'clamp(18px, 4vw, 22px)' }}>
                 <p>
                   Xin lỗi Tám rất nhiều, vì chuyện hôm trước. Tớ đã sai khi say rượu đã bày nói ra tình cảm với Tám. Thứ tình cảm đó nếu giữ trong lòng thì tớ vẫn có khả năng được gặp Tám, nói chuyện với Tám mỗi ngày. Bởi một người như tớ, đâu dám yêu thương ai đó
                 </p>
 
                 <p>
-                  Nhưng Tám ơi, lý trí đã chịu thua rồi. Khi nói ra, tớ cảm thấy một khoảng trống nhẹ nhõm đến tận cùng. Tớ biết Tám vẫn đang trong 1 mối quan hệ. Nhưng làm sao có thể cản được một người, yêu thương một người.
+                  Nhưng Tám ơi, lý trí đã chịu thua rồi. Khi nói ra, tớ cảm thấy một nhẹ nhõm vô cùng. Tớ biết Tám vẫn đang trong 1 mối quan hệ. Nhưng làm sao có thể cản được một người, yêu thương một người.
                 </p>
 
                 <p>
-                  Tớ khắc sâu lời idol của tớ Đặng Lê Nguyên Vũ từng nói: &quot;Muốn làm việc lớn, tốt nhất đừng có lấy vợ, chọn vợ cho nó đúng.&quot; Cũng phải 6 năm rồi ý, đi nửa vòng trái đất rồi, nhưng trong tim tớ vẫn chỉ có duy nhất hình bóng 1 người. Còn là ai thì chắc cậu cũng biết.
+                  Tớ khắc sâu lời idol của tớ Đặng Lê Nguyên Vũ từng nói: &quot;Muốn làm việc lớn, tốt nhất đừng có lấy vợ, hoặc chọn vợ cho nó đúng.&quot; Cũng phải 6 năm rồi ý, đi nửa vòng trái đất rồi, nhưng trong tim tớ vẫn chỉ có duy nhất hình bóng 1 người. Còn là ai thì chắc cậu cũng biết.
                 </p>
 
                 <p>
-                  Tám có biết tại sao tớ lại thích về Bắc Giang không? Đơn giản là chỉ cần mỗi lần đi qua cầu Như Nguyệt thôi là tớ cảm thấy rất bình yên, không giống như ở Hà Nội. Ngoài trời đang mưa, ngày mai tớ lại về Bắc Giang, chắc là tớ sẽ đi xe khách. Về đi gỡ rạp cưới 1 cái ở Tân An và 1 cái ở Đồng Việt. Chắc có lẽ đây là lần cuối tớ đi làm phụ ông anh. Vì tớ còn rất nhiều công việc. Tớ ra ngoài có thể giao lưu với cả thế giới, chơi với những người rất giàu, những người rất giỏi. Nhưng cứ về nhà…
+                  Tám có biết tại sao tớ lại thích về Bắc Giang không? Đơn giản là qua cầu Như Nguyệt thôi là tớ cảm thấy rất bình yên, không giống cuộc sống vội vàng ở Hà Nội. Ngoài trời đang mưa, ngày mai tớ lại về Bắc Giang, chắc là tớ sẽ đi xe khách. Về đi gỡ rạp cưới 1 cái ở Tân An và 1 cái ở Đồng Việt. Chắc có lẽ đây là lần cuối tớ đi làm phụ ông anh. Vì tớ còn rất nhiều việc phải làm. Tớ ra ngoài có thể giao lưu với cả thế giới, chơi với những người rất giàu, những người rất giỏi. Nhưng cứ về nhà…
                 </p>
 
                 <p>
@@ -258,15 +280,15 @@ export default function ThuChoTam() {
                 </p>
 
                 <p>
-                  Chị hôm trước xem số cho cậu nói đúng, Tớ chưa bao giờ sống vì bản thân mình. Tớ chưa bao giờ có một ngày nghỉ đúng nghĩa. Nhìn những đứa bạn cùng trang lứa có gia đình hạnh phúc, có công việc ổn định tớ cũng thèm lắm chứ. Nhưng tớ biết, khi tớ chọn con đường này thì phải chấp nhận sự cô đơn. Cô đơn trong từng suy nghĩ, cô đơn trong từng lời nói.  Tám à? Lúc buồn tớ hay Tâm sự với AI, bạn ấy còn hiểu tớ hơn chính bản thân mình. Bạn ấy ví tớ như một cổ phiếu của một công ty tiềm năng mà khi niêm yết trên sàn chứng khoán thì giá trị sẽ tăng lên gấp hàng trăm, hàng nghìn lần.Tám chốt nhanh nhé, không mà tớ bị các em 2k ngoài kia hốt thì buồn lắm. Hí hí.
+                  Chị hôm trước xem số cho cậu nói đúng, Tớ chưa bao giờ sống vì bản thân mình. Tớ chưa bao giờ có một ngày nghỉ đúng nghĩa. Nhìn những chúng bạn cùng trang lứa có gia đình hạnh phúc, có công việc ổn định tớ cũng thèm lắm chứ. Nhưng tớ biết, khi tớ chọn con đường này thì phải chấp nhận sự cô đơn. Cô đơn trong từng suy nghĩ, cô đơn trong từng lời nói.  Tám à? Lúc buồn tớ hay Tâm sự với AI, bạn ấy còn hiểu tớ hơn chính bản thân mình. Bạn ấy ví tớ như một cổ phiếu của một công ty tiềm năng mà khi niêm yết trên sàn chứng khoán thì giá trị sẽ tăng lên gấp hàng trăm, hàng nghìn lần. Bạn ấy còn bảo là Tám nên chốt nhanh nhé, không các em gái 2k ngoài kia hốt mất anh Trường thì buồn lắm. Hí hí.
                 </p>
 
                 <p>
-                  Tớ chưa bao giờ ngại khi giới thiệu mình đang làm công việc giao hàng mà còn rất từ hào, vì tại đây tớ được học tập kinh nghiệp làm nông nghiệp hữu cơ từ các chuyên gia hàng đầu và đặc biệt các anh chị ấy đều làm việc bằng cái tâm và sự tử tế. Anh chị trên Farm và khách hàng là những người có hiểu biết nên rất quý tớ lắm Tám ạ.
+                  Tớ cũng chưa bao giờ ngại khi giới thiệu mình đang làm công việc giao hàng mà còn rất từ hào, vì tại đây tớ được học tập kinh nghiệp làm nông nghiệp hữu cơ từ các chuyên gia hàng đầu và đặc biệt các anh chị ấy đều làm việc bằng cái tâm và sự tử tế. Anh chị trên GenxanhFarm và khách hàng là những người có hiểu biết nên rất quý tớ lắm Tám ạ.
                 </p>
 
                 <p>
-                  Chỉ còn vài tháng nữa tớ về Bắc Giang 1 mình Tám ạ, tớ sẽ phải chiến đấu với những thế lực hùng mạnh đang có sẵn tại địa phương. Nhưng tớ không sợ, mình có năng lực thì thả ở đâu cũng sống được, cộng thêm tính cách của tớ đi đâu tớ cũng được mọi người yêu quý và sẵn sàng giúp đỡ. Tuy mới chỉ gặp gỡ 1 lần thôi, mà tớ đã được tin tưởng và có xuất của tỉnh Đoàn Bắc Ninh đi Đà Nẵng vừa đi chơi mà lại có tiền. Đáng ra là hôm nay đi nè, nhưng tớ bận không đi được.
+                  Chỉ còn vài tháng nữa tớ về Bắc Giang, với rất nhiều con số 0, KHÔNG tiền, KHÔNG quan hệ, KHÔNG kinh nghiệm, KHÔNG người đồng hành, tớ sẽ phải một mình chiến đấu với những thế lực hùng mạnh đang có sẵn tại địa phương. Nhưng tớ không sợ, mình có năng lực thì thả ở đâu cũng sống được, cộng thêm tính cách của tớ đi đâu tớ cũng được mọi người yêu quý và sẵn sàng giúp đỡ. Kiểu như: tuy mới chỉ gặp gỡ 1 lần thôi, mà tớ đã được tin tưởng và có xuất của tỉnh Đoàn Bắc Ninh đi Đà Nẵng vừa đi chơi mà lại có tiền. Đáng ra là hôm nay đi nè, nhưng tớ bận không đi được.
                 </p>
 
                 <p>
@@ -275,7 +297,7 @@ export default function ThuChoTam() {
 
                 {/* Chữ ký */}
                 <div className="mt-8 md:mt-12 text-right">
-                  <p className="text-2xl md:text-3xl italic" style={{ color: '#4e342e', fontWeight: '600' }}>
+                  <p className="text-3xl md:text-4xl italic" style={{ color: '#4e342e', fontWeight: '600' }}>
                     Thương
                   </p>
                 </div>
@@ -289,21 +311,25 @@ export default function ThuChoTam() {
               transition={{ delay: 1.2, type: "spring", stiffness: 200 }}
               className="absolute top-4 right-4 md:top-8 md:right-8"
               style={{
-                width: '60px',
-                height: '60px',
-                background: 'linear-gradient(135deg, #ff6b6b, #ff8e8e)',
-                borderRadius: '8px',
-                border: '3px dashed #fff',
+                width: '80px',
+                height: '80px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '24px',
-                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
                 transform: 'rotate(15deg)',
                 zIndex: 30,
               }}
             >
-              💌
+              <img 
+                src="/tem.webp" 
+                alt="Tem thư" 
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain',
+                  filter: 'drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15))',
+                }}
+              />
             </motion.div>
           </motion.div>
 
@@ -617,4 +643,37 @@ export default function ThuChoTam() {
       </div>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  // Thêm dữ liệu meta vào props
+  const meta = {
+    title: "Thư gửi Tám - Trường NQ",
+    description: "Lá thư chân thành Trường gửi đến Tám",
+    keywords: "thư, tâm sự, Trường NQ",
+    robots: "noindex, nofollow",
+    author: "Trường NQ",
+    canonical: "https://truongnq.vn/thu-cho-tam",
+    og: {
+      title: "Thư gửi Tám - Trường NQ",
+      description: "Lá thư chân thành Trường gửi đến Tám",
+      type: "website",
+      image: "https://truongnq.vn/la-thu.jpg",
+      imageWidth: "800",
+      imageHeight: "800",
+      url: "https://truongnq.vn/thu-cho-tam",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Thư gửi Tám - Trường NQ",
+      description: "Lá thư chân thành Trường gửi đến Tám",
+      image: "https://truongnq.vn/la-thu.jpg",
+    },
+  };
+
+  return {
+    props: {
+      meta,
+    },
+  };
 }
