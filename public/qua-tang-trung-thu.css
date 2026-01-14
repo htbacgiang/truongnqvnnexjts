@@ -1,0 +1,48 @@
+.sunset-gradient {
+  background: linear-gradient(
+    135deg,
+    #ff6b6b 0%,
+    #ff8e53 15%,
+    #ffa726 30%,
+    #ffb74d 45%,
+    #ffcc80 60%,
+    #ffe0b2 75%,
+    #fff3e0 90%,
+    #e3f2fd 100%
+  );
+  background-size: 400% 400%;
+  animation: sunsetMove 60s ease-in-out infinite;
+  position: relative;
+}
+
+.sunset-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 107, 107, 0.3) 0%,
+    rgba(255, 142, 83, 0.2) 25%,
+    rgba(255, 167, 38, 0.15) 50%,
+    rgba(255, 183, 77, 0.1) 75%,
+    rgba(227, 242, 253, 0.05) 100%
+  );
+  animation: sunsetMove 80s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+@keyframes sunsetMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
